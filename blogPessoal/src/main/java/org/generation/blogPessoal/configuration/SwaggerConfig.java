@@ -1,5 +1,4 @@
-package com.generation.blogpessoal.configuration;
-
+package org.generation.blogPessoal.configuration;
 
 import org.springdoc.core.customizers.OpenApiCustomiser;
 import org.springframework.context.annotation.Bean;
@@ -19,22 +18,15 @@ public class SwaggerConfig {
 	@Bean
 	public OpenAPI springBlogPessoalOpenAPI() {
 		return new OpenAPI()
-				.info(new Info()
-						.title("Projeto Blog Pessoal")
-						.description("Projeto Blog Pessoal - Generation Brasil")
+				.info(new Info().title("Projeto Blog Pessoal").description("Projeto Blog Pessoal - Generation Brasil")
 						.version("v0.0.1")
-				.license(new License()
-						.name("Generation Brasil")
-						.url("https://brazil.generation.org/"))
-				.contact(new Contact()
-						.name("Giulia Castro")
-						.url("https://github.com/GiuliaCastroo")
-						.email("maju.nogueir3.castr3@gmail.com")))
-				.externalDocs(new ExternalDocumentation()
-						.description("GitHub")
+						.license(new License().name("Generation Brasil").url("https://brazil.generation.org/"))
+						.contact(new Contact().name("Giulia Castro").url("https://github.com/GiuliaCastroo")
+								.email("maju.nogueir3.castr3@gmail.com")))
+				.externalDocs(new ExternalDocumentation().description("GitHub")
 						.url("https://github.com/GiuliaCastroo/BlogPessoal"));
 	}
-	
+
 	@Bean
 	public OpenApiCustomiser customerGlobalHeaderOpenApiCustomiser() {
 
@@ -54,7 +46,7 @@ public class SwaggerConfig {
 			}));
 		};
 	}
-	
+
 	private ApiResponse createApiResponse(String message) {
 
 		return new ApiResponse().description(message);
